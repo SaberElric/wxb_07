@@ -206,15 +206,6 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 		}
 	}
 
-	private View getTabItemView(int i) {
-		View view = layoutInflater.inflate(R.layout.tab_item, null);
-		ImageView mImageView = (ImageView) view.findViewById(R.id.tab_imageview);
-		TextView mTextView = (TextView) view.findViewById(R.id.tab_textview);
-		mImageView.setBackgroundResource(imageViewArray[i]);
-		mTextView.setText(textViewArray[i].getText());
-		return view;
-	}
-
 
 
 
