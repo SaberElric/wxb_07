@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.wxb_07.R;
+import com.example.wxb_07.Helper.TitleBar;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -50,6 +51,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 		initView();
 		initPage();
 		setSelectStyle();
+		TitleBar.initTitleBar(this, index);
 	}
 /**设置选中样式*/
 	private void setSelectStyle() {
@@ -95,11 +97,12 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 				index = arg0;			
 				viewpager.setCurrentItem(index);
 				setSelectStyle();
+				TitleBar.initTitleBar(AppMain.this, index);
 			
 			}
 			
 			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			public void   onPageScrolled(int arg0, float arg1, int arg2) {
 				// TODO Auto-generated method stub
 				
 			}

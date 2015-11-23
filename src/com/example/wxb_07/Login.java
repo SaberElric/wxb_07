@@ -11,11 +11,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 public class Login extends Activity {
 
@@ -23,6 +27,7 @@ public class Login extends Activity {
 	private static EditText ed2;
 	private static Button btg01;
 	private static Button btg02;
+	LinearLayout linearLayout;
 	
 	
 	
@@ -82,12 +87,23 @@ public class Login extends Activity {
 			
 		}
 	};
+
 	public boolean check() {
 		//添加格式检验
 		return true;
 	}
 	public void initUI() {
 		// TODO Auto-generated method stub
+		linearLayout= (LinearLayout) findViewById(R.id.loginPG);
+		linearLayout.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				InputMethodManager IM = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+				
+				return IM.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+			}
+		});
 		ed1 = (EditText)findViewById(R.id.userID);
 		ed2 = (EditText)findViewById(R.id.userPasswd);
 		btg01 = (Button)findViewById(R.id.btg_login);
