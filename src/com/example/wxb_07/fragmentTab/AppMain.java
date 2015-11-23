@@ -33,16 +33,11 @@ import android.widget.TextView;
 public class AppMain extends FragmentActivity implements OnClickListener {
 
 
-	private LayoutInflater layoutInflater;
-	private Class fragmentArray[] = { Fragment1.class, Fragment.class,
-			Fragment3.class, Fragment4.class };
-	private int imageViewArray[] = { R.drawable.mywork, R.drawable.mypatient,
-			R.drawable.infusion, R.drawable.personal };
+
 	private TextView textViewArray[] ;
 	private List<Fragment> list = new ArrayList<Fragment>();
 	private ViewPager viewpager;
 	private int index= 0 ;
-	private TabWidget tabWidget;
 	private Button[] btnArray;
 	private int backgroundID_u[];
 	private int backgtoundID_s[];
@@ -115,7 +110,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 				
 			}
 		});
-		layoutInflater = LayoutInflater.from(this);
+
 		btnArray=new Button[]{
 				(Button)findViewById(R.id.btgpersonal),
 				(Button)findViewById(R.id.btgwork),
@@ -192,19 +187,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 
 
 	}
-	private void setButtonColor() {
-		for (int i = 0; i < btnArray.length; i++) {
-			if (i == index) {
-				btnArray[i].setBackgroundResource(backgroundID_u[i]);
-				textViewArray[i].setTextColor(Color.BLACK);
-				
-			} else {
-				btnArray[i].setBackgroundResource(backgtoundID_s[i]);
-				textViewArray[i].setTextColor(Color.parseColor("#7e90ff"));
-			}
-			
-		}
-	}
+
 
 
 
