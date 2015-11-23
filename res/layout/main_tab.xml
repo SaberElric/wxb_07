@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+<include layout="@layout/wintittle"/>
+
+ <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED" >
+
+        <RelativeLayout
+            android:id="@+id/message_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btgpersonal"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/personal"
+                    android:layout_gravity="center_horizontal"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/person_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="个人"               
+                    android:textColor="#82858b" />
+                    
+            </LinearLayout>
+        </RelativeLayout>
+
+   
+         <RelativeLayout
+            android:id="@+id/news_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btgwork"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/mywork"
+                    android:layout_gravity="center_horizontal"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/work_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="工作"
+                    android:textColor="#82858b" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/news_layout1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btgmypatient"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/mypatient"
+                    android:layout_gravity="center_horizontal"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/patient_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="病人"
+                    android:textColor="#82858b" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/setting_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical" >
+
+                 <Button
+                    android:id="@+id/btgSetList"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/mywork"
+                    android:layout_gravity="center_horizontal"
+                    android:text="" />
+
+
+                <TextView
+                    android:id="@+id/setting_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="设置"
+                    android:textColor="#82858b" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+ <!--    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />   
+    <android.support.v4.app.FragmentTabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0" />
+    </android.support.v4.app.FragmentTabHost> -->
+    
+   
+
+
+</LinearLayout>

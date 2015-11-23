@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:gravity="center"
+    android:background="@drawable/dialog">
+    
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="账号	"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/register_userID"
+            android:layout_height="20dp"
+            android:layout_width="120dp"
+            android:background="@drawable/edittext"/>
+
+     </LinearLayout>
+     
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+         android:layout_marginTop="10dp">   
+        <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true" 
+            android:gravity="center" 
+            android:text="密码	"        
+            android:textColor="#000000" />  
+           <EditText android:id="@+id/register_userpasswd"
+            android:layout_height="20dp"
+            android:layout_width="120dp"
+            android:password="true"
+            android:background="@drawable/edittext"/>   
+        </LinearLayout>
+        
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+         android:layout_marginTop="20dp">    
+        
+             
+        <Button android:id="@+id/register_Button"
+            android:layout_height="20dp"
+            android:layout_width="60dp"
+            android:background="@drawable/button_usual"
+            android:text="确 定"
+            android:textSize="10dp"
+            android:textColor="#ffffff"/>
+        
+        
+    
+    </LinearLayout>
+    
+    
+
+</LinearLayout>
