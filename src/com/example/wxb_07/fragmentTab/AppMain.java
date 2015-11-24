@@ -31,7 +31,9 @@ import android.widget.TabHost.TabSpec;
 import android.widget.Button;
 import android.widget.TabWidget;
 import android.widget.TextView;
-
+/**
+ * @author wxb
+ * 2015.11.24*/
 public class AppMain extends FragmentActivity implements OnClickListener {
 
 

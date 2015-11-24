@@ -11,10 +11,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 /**
- * @author lili.guo
- * 
- *         2014-10-22
- */
+ * @author wxb
+ * 2015.11.24*/
 public class Fragment2 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -15,10 +15,8 @@ import android.widget.TextView;
 
 
 /**
- * @author lili.guo
- *
- * 2014-10-22
- */
+ * @author wxb
+ * 2015.11.24*/
 public class Fragment1 extends Fragment {
 	
 	@Override

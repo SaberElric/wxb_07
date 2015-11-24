@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-
+/**
+ * @author wxb
+ * 2015.11.24*/
 public class Fragment4 extends Fragment{
 	View view;
 	@Override
