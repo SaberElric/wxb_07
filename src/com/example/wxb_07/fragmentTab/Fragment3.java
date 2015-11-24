@@ -16,7 +16,7 @@ public class Fragment3 extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view=inflater.inflate(R.layout.fragment_item3, null);
-		EditText editText = (EditText) view.findViewById(R.id.editView2);
+	//	EditText editText = (EditText) view.findViewById(R.id.editView2);
 		return view;
 	}
 }

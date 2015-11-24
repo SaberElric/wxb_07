@@ -25,7 +25,7 @@ public class Fragment1 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view=inflater.inflate(R.layout.fragment_item1, null);
-		final EditText editText = (EditText) view.findViewById(R.id.editView1);
+		/*final EditText editText = (EditText) view.findViewById(R.id.editView1);
 		editText.setFocusableInTouchMode(true);
 		final TextView text = (TextView)view.findViewById(R.id.textView2);
 		editText.addTextChangedListener(new TextWatcher() {
@@ -48,7 +48,7 @@ public class Fragment1 extends Fragment {
 				// TODO Auto-generated method stub
 				
 			}
-		});
+		});*/
 		return view;
 	}
 

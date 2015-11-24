@@ -24,7 +24,7 @@ public class Fragment4 extends Fragment{
 	public void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		EditText editText = (EditText) view.findViewById(R.id.editView2);
+	//	EditText editText = (EditText) view.findViewById(R.id.editView2);
 	}
 
 }

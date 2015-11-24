@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -42,6 +43,8 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	private Button[] btnArray;
 	private int backgroundID_u[];
 	private int backgtoundID_s[];
+	private SwipeRefreshLayout sp;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -76,7 +79,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	@SuppressWarnings("deprecation")
 	private void initView() {
 		viewpager = (ViewPager) findViewById(R.id.pager);
-		
+		sp = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
 		/**ÉèÖÃµã»÷¿Õ°×ÇøÓò¼üÅÌÒþ²Ø*/
 		viewpager.setOnTouchListener(new OnTouchListener() {
 			
@@ -84,7 +87,17 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 			public boolean onTouch(View v, MotionEvent event) {
 				// TODO Auto-generated method stub
 				InputMethodManager IM = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-				
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_MOVE:
+					sp.setEnabled(false);
+					break;
+				case MotionEvent.ACTION_UP:
+					
+				case MotionEvent.ACTION_CANCEL:
+					sp.setEnabled(true);
+				default:
+					break;
+				}
 				return IM.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 			}
 		});
@@ -191,7 +204,11 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 
 	}
 
-
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		sp.setEnabled(false);
+	}
 
 
 
