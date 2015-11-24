@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -20,9 +21,11 @@ import android.widget.TextView;
 public class Fragment1 extends Fragment {
 	
 	@Override
+	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view=inflater.inflate(R.layout.fragment_item1, null);
+		//ListView listView = (ListView) view.findViewById(R.id.list1);
 		/*final EditText editText = (EditText) view.findViewById(R.id.editView1);
 		editText.setFocusableInTouchMode(true);
 		final TextView text = (TextView)view.findViewById(R.id.textView2);

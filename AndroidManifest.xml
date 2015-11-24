@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wxb_07"
     android:versionCode="1"
-    android:versionName="1.0.0.1" >
+    android:versionName="1.0.0.2" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -23,7 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.wxb_07.Helper.HDialog" android:theme="@style/my_dialog" ></activity>
-         <activity android:name="com.example.wxb_07.fragmentTab.AppMain" ></activity>
+        <activity android:name="com.example.wxb_07.fragmentTab.AppMain" android:windowSoftInputMode="adjustPan|stateHidden"
+            ></activity>
+
+
+          
        
     </application>
 

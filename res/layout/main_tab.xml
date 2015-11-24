@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:id="@+id/main_app">
 <include layout="@layout/wintittle"/>
 <LinearLayout 
     android:layout_height="0dp"
@@ -26,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EDEDED"
-        android:layout_gravity="bottom" >
+        android:layout_gravity="end" >
 
         <RelativeLayout
             android:id="@+id/message_layout"

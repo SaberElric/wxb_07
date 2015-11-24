@@ -29,11 +29,10 @@ import android.widget.ImageView;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TabWidget;
 import android.widget.TextView;
-/**
- * @author wxb
- * 2015.11.24*/
+
 public class AppMain extends FragmentActivity implements OnClickListener {
 
 
@@ -41,12 +40,11 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	private TextView textViewArray[] ;
 	private List<Fragment> list = new ArrayList<Fragment>();
 	private ViewPager viewpager;
-	private int index= 0 ;
+	private static int index= 0 ;
 	private Button[] btnArray;
 	private int backgroundID_u[];
 	private int backgtoundID_s[];
-	private SwipeRefreshLayout sp;
-	
+	SwipeRefreshLayout sp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,6 +80,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	private void initView() {
 		viewpager = (ViewPager) findViewById(R.id.pager);
 		sp = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+		final LinearLayout layout = (LinearLayout) findViewById(R.id.main_app);
 		/**…Ë÷√µ„ª˜ø’∞◊«¯”Úº¸≈Ã“˛≤ÿ*/
 		viewpager.setOnTouchListener(new OnTouchListener() {
 			
@@ -89,18 +88,13 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 			public boolean onTouch(View v, MotionEvent event) {
 				// TODO Auto-generated method stub
 				InputMethodManager IM = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-				switch (event.getAction()) {
-				case MotionEvent.ACTION_MOVE:
+				if(event.getAction() == MotionEvent.ACTION_MOVE){
 					sp.setEnabled(false);
-					break;
-				case MotionEvent.ACTION_UP:
-					
-				case MotionEvent.ACTION_CANCEL:
-					sp.setEnabled(true);
-				default:
-					break;
 				}
-				return IM.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+				else {
+					sp.setEnabled(true);
+				}
+				return IM.hideSoftInputFromWindow(layout.getWindowToken(), 0);
 			}
 		});
 		/**…Ë÷√viewpager«–ªª*/
@@ -209,9 +203,11 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		sp.setEnabled(false);
+		sp.setRefreshing(false);
 	}
-
+public void refresh() {
+	sp.setRefreshing(true);
+}
 
 
 	
