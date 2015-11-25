@@ -8,6 +8,8 @@ import java.util.List;
 import com.example.wxb_07.R;
 import com.example.wxb_07.Helper.TitleBar;
 
+import android.R.string;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -32,6 +35,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TabWidget;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AppMain extends FragmentActivity implements OnClickListener {
 
@@ -55,6 +59,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 		initPage();
 		setSelectStyle();
 		TitleBar.initTitleBar(this, index);
+		refresh(this, sp, index);
 	}
 /**设置选中样式*/
 	private void setSelectStyle() {
@@ -107,6 +112,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 				viewpager.setCurrentItem(index);
 				setSelectStyle();
 				TitleBar.initTitleBar(AppMain.this, index);
+				refresh(AppMain.this, sp, index);
 			
 			}
 			
@@ -178,6 +184,7 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 					
 			}
 			viewpager.setCurrentItem(index);
+			refresh(this, sp, index);
 		}catch(Exception e){
 			
 		}
@@ -205,8 +212,37 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 		sp.setRefreshing(false);
 	}
-public void refresh() {
-	sp.setRefreshing(true);
+public static void refresh(final Context context,final SwipeRefreshLayout spl, final int currentpage) {
+	
+	//	spl.setRefreshing(true);
+		spl.setOnRefreshListener(new OnRefreshListener() {
+		
+		@Override
+		public void onRefresh() {
+			// TODO Auto-generated method stub
+			switch (currentpage) {
+			case 0:
+				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
+				spl.setRefreshing(false);
+				break;
+			case 1:
+				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
+				spl.setRefreshing(false);
+				break;
+			case 2:
+				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
+				spl.setRefreshing(false);
+				break;
+			case 3:
+				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
+				spl.setRefreshing(false);
+				break;
+
+			default:
+				break;
+			}
+		}
+	});
 }
 
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   			 xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <com.example.wxb_07.Helper.PercentLinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="#000000">
+        
+    <com.example.wxb_07.Helper.PercentLinearLayout
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_heightPercent="10%"
+	    app:layout_widthPercent="90%"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:background="#ff00ff">
+        
+            <com.example.wxb_07.Helper.RoundImage
+	            android:id="@+id/user_image"
+	            android:layout_height="match_parent"
+	            android:layout_width="0dp"
+	            app:layout_widthPercent="20%"
+	            android:paddingTop="2dp"
+	            android:paddingBottom="2dp"
+	            android:src="@drawable/uerimage"/>
+    </com.example.wxb_07.Helper.PercentLinearLayout>
+ </com.example.wxb_07.Helper.PercentLinearLayout>
+
+            
+       
+       
+</LinearLayout>
+    

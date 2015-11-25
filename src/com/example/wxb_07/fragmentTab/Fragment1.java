@@ -1,10 +1,11 @@
-
 package com.example.wxb_07.fragmentTab;
 
 import com.example.wxb_07.R;
+import com.example.wxb_07.Helper.BaseHelper;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -20,37 +21,22 @@ import android.widget.TextView;
  * 2015.11.24*/
 public class Fragment1 extends Fragment {
 	
-	@Override
 	
+	
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view=inflater.inflate(R.layout.fragment_item1, null);
-		//ListView listView = (ListView) view.findViewById(R.id.list1);
-		/*final EditText editText = (EditText) view.findViewById(R.id.editView1);
-		editText.setFocusableInTouchMode(true);
-		final TextView text = (TextView)view.findViewById(R.id.textView2);
-		editText.addTextChangedListener(new TextWatcher() {
-			
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// TODO Auto-generated method stub
-				text.setText(editText.getText().toString());
-			}
-			
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void afterTextChanged(Editable s) {
-				// TODO Auto-generated method stub
-				
-			}
-		});*/
-		return view;
+		//View view1=inflater.inflate(R.layout.fragment_item1,container, false);
+	View view2 = inflater.inflate(R.layout.activity_item, container,false);
+		/*if(BaseHelper.isNetworkAvailable(getActivity()) == true){
+			return view1;
+		}
+		else{
+			return view2;
+		}*/
+	
+	
+		//return view1;
+	return view2;
 	}
-
 }
