@@ -37,7 +37,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AppMain extends FragmentActivity implements OnClickListener {
+public class AppMain extends FragmentActivity implements OnClickListener,OnRefreshListener {
 
 
 
@@ -48,7 +48,10 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	private Button[] btnArray;
 	private int backgroundID_u[];
 	private int backgtoundID_s[];
+	private static short[] count;
+	private static boolean isFirstsp;
 	SwipeRefreshLayout sp;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,8 +62,88 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 		initPage();
 		setSelectStyle();
 		TitleBar.initTitleBar(this, index);
-		refresh(this, sp, index);
+		sp.setOnRefreshListener(this);
+		SetFirstSp();
+	//	refresh(this, sp, index);
 	}
+	public void SetFirstSp(){
+			switch (index) {
+			case 0:
+				count[0]++;
+				if(count[0] < 2){
+					sp.post(new Thread(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							sp.setRefreshing(true);
+						}
+					}));
+				onRefresh();
+				}
+				else {
+					
+				}
+				
+				break;
+			case 1:
+				count[1]++;
+				if(count[1] < 2){
+					sp.post(new Thread(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							sp.setRefreshing(true);
+						}
+					}));
+				onRefresh();
+				}
+				
+				break;
+			case 2:
+				count[2]++;
+				if(count[2] < 2){
+					sp.post(new Thread(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							sp.setRefreshing(true);
+						}
+					}));
+				onRefresh();
+				}
+				
+				break;
+			case 3:
+				count[3]++;
+				if(count[3] < 2){
+					sp.post(new Thread(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							sp.setRefreshing(true);
+						}
+					}));
+				onRefresh();
+				}
+				
+				break;
+
+			default:
+				break;
+			}
+			
+	
+
+		
+		
+		}
+		
+			
+	
 /**设置选中样式*/
 	private void setSelectStyle() {
 		for (int i = 0; i < btnArray.length; i++) {
@@ -85,6 +168,9 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 	private void initView() {
 		viewpager = (ViewPager) findViewById(R.id.pager);
 		sp = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+		
+		sp.setColorSchemeColors(Color.RED,Color.BLUE,Color.GREEN,Color.CYAN);
+		
 		final LinearLayout layout = (LinearLayout) findViewById(R.id.main_app);
 		/**设置点击空白区域键盘隐藏*/
 		viewpager.setOnTouchListener(new OnTouchListener() {
@@ -112,7 +198,8 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 				viewpager.setCurrentItem(index);
 				setSelectStyle();
 				TitleBar.initTitleBar(AppMain.this, index);
-				refresh(AppMain.this, sp, index);
+				SetFirstSp();
+			//	refresh(AppMain.this, sp, index);
 			
 			}
 			
@@ -184,7 +271,9 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 					
 			}
 			viewpager.setCurrentItem(index);
-			refresh(this, sp, index);
+			
+			SetFirstSp();
+			//refresh(this, sp, index);
 		}catch(Exception e){
 			
 		}
@@ -203,50 +292,63 @@ public class AppMain extends FragmentActivity implements OnClickListener {
 		list.add(fragment3);
 		list.add(fragment4);
 		viewpager.setAdapter(new MyFragmentAdapter(getSupportFragmentManager(), list));
-
+		count = new short[]{0,0,0,0,};
 
 	}
-
+	
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		sp.setRefreshing(false);
 	}
-public static void refresh(final Context context,final SwipeRefreshLayout spl, final int currentpage) {
-	
-	//	spl.setRefreshing(true);
-		spl.setOnRefreshListener(new OnRefreshListener() {
-		
 		@Override
 		public void onRefresh() {
 			// TODO Auto-generated method stub
-			switch (currentpage) {
+			switch (index) {
 			case 0:
-				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
-				spl.setRefreshing(false);
+				sp.postDelayed(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+					
+						Toast.makeText(AppMain.this, String.valueOf(index),Toast.LENGTH_SHORT ).show();
+	
+				sp.setRefreshing(false);
+					}
+				},2000);
+				
 				break;
 			case 1:
-				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
-				spl.setRefreshing(false);
+				sp.postDelayed(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						Toast.makeText(AppMain.this, String.valueOf(index),Toast.LENGTH_SHORT ).show();
+						
+				sp.setRefreshing(false);
+					}
+				},2000);
 				break;
 			case 2:
-				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
-				spl.setRefreshing(false);
+				Toast.makeText(AppMain.this, String.valueOf(index),Toast.LENGTH_SHORT ).show();
+				sp.setRefreshing(false);
 				break;
 			case 3:
-				Toast.makeText(context, String.valueOf(currentpage),Toast.LENGTH_SHORT ).show();
-				spl.setRefreshing(false);
+				Toast.makeText(AppMain.this, String.valueOf(index),Toast.LENGTH_SHORT ).show();
+				sp.setRefreshing(false);
 				break;
 
 			default:
 				break;
 			}
 		}
-	});
+
 }
 
 
 	
 
 
-}
+

@@ -5,28 +5,111 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     <com.example.wxb_07.Helper.PercentLinearLayout
+        android:id="@+id/user_msg"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="#000000">
+        android:orientation="vertical"
+      android:background="#ffffff"
+        android:paddingRight="10dp"
+        >
+        
         
     <com.example.wxb_07.Helper.PercentLinearLayout
         android:layout_height="0dp"
         android:layout_width="0dp"
         app:layout_heightPercent="10%"
-	    app:layout_widthPercent="90%"
-        android:orientation="vertical"
-        android:padding="2dp"
-        android:background="#ff00ff">
+	    app:layout_widthPercent="100%"
+        android:orientation="horizontal"
+        android:layout_marginTop="1dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        >
         
             <com.example.wxb_07.Helper.RoundImage
 	            android:id="@+id/user_image"
 	            android:layout_height="match_parent"
 	            android:layout_width="0dp"
 	            app:layout_widthPercent="20%"
-	            android:paddingTop="2dp"
-	            android:paddingBottom="2dp"
-	            android:src="@drawable/uerimage"/>
+	            android:src="@drawable/kuroku"
+	            />
+            <com.example.wxb_07.Helper.PercentLinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                
+                android:padding="2dp"
+                android:orientation="vertical">
+                <LinearLayout 
+	                android:layout_height="0dp"
+	                android:layout_width="wrap_content"
+	                app:layout_heightPercent="50%"
+	                android:layout_marginLeft="5dp">
+	                <TextView 
+	                    android:id="@+id/user_name"
+	                    android:layout_height="wrap_content"
+	                    android:layout_width="wrap_content"
+	                    />
+                
+            </LinearLayout>
+            <LinearLayout 
+                android:layout_height="0dp"
+                app:layout_heightPercent="50%"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="5dp">
+                <TextView 
+	                    android:id="@+id/time"
+	                    android:layout_height="wrap_content"
+	                    android:layout_width="wrap_content"
+	                    />
+                <TextView 
+	                    android:layout_height="wrap_content"
+	                    android:layout_width="wrap_content"
+	                    android:text="     "/>
+                <TextView 
+	                    android:id="@+id/comefrom"
+	                    android:layout_height="wrap_content"
+	                    android:layout_width="wrap_content"
+	                    />
+            </LinearLayout>
+           </com.example.wxb_07.Helper.PercentLinearLayout>
     </com.example.wxb_07.Helper.PercentLinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        >
+            <LinearLayout 
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+                <TextView 
+                android:id="@+id/content"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                />
+            </LinearLayout>
+            <RelativeLayout  
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp">
+           <com.example.wxb_07.Foundpage.MyGridView 
+               
+                android:id="@+id/gridview1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:verticalSpacing="2dp"
+                android:horizontalSpacing="2dp"
+                android:stretchMode="columnWidth"
+                android:numColumns="3"
+               >
+                
+            </com.example.wxb_07.Foundpage.MyGridView>
+            </RelativeLayout>
+           
+
+    </LinearLayout>
+    
  </com.example.wxb_07.Helper.PercentLinearLayout>
 
             

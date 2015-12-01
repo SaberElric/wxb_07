@@ -1,8 +1,11 @@
 package com.example.wxb_07.Helper;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.Display;
+import android.view.WindowManager;
 
 public class BaseHelper {
 
@@ -25,6 +28,19 @@ public class BaseHelper {
 		
 	}
 		return false;
+	}
+	/***/
+	public static int getScreenWidth(Activity act){
+		int width = 0;
+		WindowManager windowManager = act.getWindowManager();
+		Display diaDisplay = windowManager.getDefaultDisplay();
+		width = diaDisplay.getWidth();
+		return width;
+		
+	}
+	public static int Dp2Px(Context context,float dp){
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int)(dp*scale + 0.5f);
 	}
 	
 }
